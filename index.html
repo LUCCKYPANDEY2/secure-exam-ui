@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Examination Ecosystem | Uncompromised Integrity</title>
     
+    <!-- Exact Fonts from Guidelines -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Manrope:wght@400;500&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        base: '#050505',
+                        background: '#050505',
                         surface: '#121212',
                         amber: '#F59E0B',
                         teal: '#14B8A6',
                         green: '#4ADE80',
+                        border: 'rgba(255, 255, 255, 0.1)'
                     },
                     fontFamily: {
                         outfit: ['Outfit', 'sans-serif'],
@@ -35,6 +39,7 @@
         }
     </script>
 
+    <!-- React, ReactDOM, Babel, Framer Motion, Lucide -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -50,7 +55,7 @@
         }
         ::selection { background-color: #F59E0B; color: #000000; }
         
-        /* Custom scrollbar for enterprise feel */
+        /* Custom enterprise scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
@@ -64,6 +69,7 @@
         const { motion } = window.Motion;
 
         function App() {
+            // Renders icons after load
             React.useEffect(() => {
                 lucide.createIcons();
             }, []);
@@ -74,13 +80,13 @@
             };
 
             return (
-                <div className="min-h-screen relative">
+                <div className="min-h-screen relative bg-background">
                     
-                    {/* NAVIGATION */}
-                    <nav className="fixed w-full top-0 z-50 backdrop-blur-md bg-base/80 border-b border-white/10 transition-all duration-300">
+                    {/* STICKY NAVIGATION */}
+                    <nav className="fixed w-full top-0 z-50 backdrop-blur-md bg-background/80 border-b border-white/10 transition-all duration-300">
                         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
                             <div className="flex items-center gap-4">
-                                <span className="font-mono text-xl tracking-[0.2em] font-bold text-amber">SEE</span>
+                                <span className="font-mono text-xl tracking-widest font-bold text-amber">SEE</span>
                                 <span className="text-xs text-white/50 font-mono tracking-widest hidden md:inline">/ SECURE EXAM ECOSYSTEM</span>
                             </div>
                             <div className="hidden lg:flex gap-8 text-xs font-mono tracking-widest text-white/70">
@@ -98,7 +104,7 @@
 
                     {/* HERO SECTION */}
                     <section className="relative pt-40 pb-20 lg:pt-48 lg:pb-32 px-6 border-b border-white/10 bg-hero-pattern">
-                        <div className="absolute inset-0 bg-gradient-to-b from-base/50 to-base pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-background pointer-events-none"></div>
                         
                         <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-16 items-center">
                             <motion.div initial="hidden" animate="visible" variants={slideUp}>
@@ -135,13 +141,8 @@
                                 </div>
                             </motion.div>
 
-                            {/* Hero Right Visual (CAPSUP Card) */}
-                            <motion.div 
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="relative hidden lg:block"
-                            >
+                            {/* Hero Right Visual */}
+                            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative hidden lg:block">
                                 <div className="bg-surface border border-white/10 p-8 shadow-2xl relative">
                                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber to-transparent"></div>
                                     <div className="flex justify-between items-start mb-12">
@@ -171,7 +172,71 @@
                         </div>
                     </section>
 
-                    {/* RECORDS SECTION */}
+                    {/* ECOSYSTEM SECTION */}
+                    <section id="ecosystem" className="py-32 px-6 border-b border-white/10">
+                        <div className="max-w-7xl mx-auto">
+                            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp}>
+                                <div className="text-[10px] font-mono text-white/50 tracking-widest mb-4">// SECTION.02 / THE ECOSYSTEM</div>
+                                <h2 className="font-outfit text-4xl lg:text-5xl font-bold tracking-tight mb-16">Four specialized applications.</h2>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div className="bg-surface border border-white/10 p-8 hover:border-amber/50 transition-colors group">
+                                        <div className="text-[10px] font-mono text-green mb-6 tracking-widest">// APP.01</div>
+                                        <i data-lucide="shield" className="w-10 h-10 text-amber mb-6 group-hover:scale-110 transition-transform"></i>
+                                        <h3 className="font-outfit text-2xl font-bold mb-3">CAPSUP Offline</h3>
+                                        <p className="text-white/60 font-manrope text-sm leading-relaxed">The core examination kiosk. A strictly offline, impenetrable test-taking environment with zero external data dependency.</p>
+                                    </div>
+                                    <div className="bg-surface border border-white/10 p-8 hover:border-amber/50 transition-colors group">
+                                        <div className="text-[10px] font-mono text-white/50 mb-6 tracking-widest">// APP.02</div>
+                                        <i data-lucide="cpu" className="w-10 h-10 text-white mb-6 group-hover:scale-110 transition-transform"></i>
+                                        <h3 className="font-outfit text-2xl font-bold mb-3">Key Generator</h3>
+                                        <p className="text-white/60 font-manrope text-sm leading-relaxed">Hardware Fingerprinting Engine to establish zero-trust identity and bind exams to specific physical devices.</p>
+                                    </div>
+                                    <div className="bg-surface border border-white/10 p-8 hover:border-amber/50 transition-colors group">
+                                        <div className="text-[10px] font-mono text-white/50 mb-6 tracking-widest">// APP.03</div>
+                                        <i data-lucide="file-key" className="w-10 h-10 text-white mb-6 group-hover:scale-110 transition-transform"></i>
+                                        <h3 className="font-outfit text-2xl font-bold mb-3">Payload Generator</h3>
+                                        <p className="text-white/60 font-manrope text-sm leading-relaxed">Secure admin authoring environment that packages questions into heavily obfuscated payload files.</p>
+                                    </div>
+                                    <div className="bg-surface border border-white/10 p-8 hover:border-amber/50 transition-colors group">
+                                        <div className="text-[10px] font-mono text-white/50 mb-6 tracking-widest">// APP.04</div>
+                                        <i data-lucide="lock" className="w-10 h-10 text-white mb-6 group-hover:scale-110 transition-transform"></i>
+                                        <h3 className="font-outfit text-2xl font-bold mb-3">The Opener</h3>
+                                        <p className="text-white/60 font-manrope text-sm leading-relaxed">Decryption Engine utilizing military-grade Public/Private Key digital envelopes for secure post-exam extraction.</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </section>
+
+                    {/* ARCHITECTURE SECTION */}
+                    <section id="architecture" className="py-32 px-6 border-b border-white/10 bg-[#080808]">
+                        <div className="max-w-7xl mx-auto">
+                            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp}>
+                                <div className="text-[10px] font-mono text-white/50 tracking-widest mb-4">// SECTION.03 / DEFENSE LAYERS</div>
+                                <h2 className="font-outfit text-4xl lg:text-5xl font-bold tracking-tight mb-16">Security Architecture.</h2>
+
+                                <div className="space-y-6">
+                                    <div className="bg-surface border-l-4 border-amber p-8 lg:p-10 shadow-lg">
+                                        <h4 className="font-mono text-xs text-amber tracking-widest mb-3">PHASE 1</h4>
+                                        <h3 className="font-outfit text-2xl font-bold mb-3">Pre-Launch & Integrity Verification</h3>
+                                        <p className="text-white/60 font-manrope text-sm leading-relaxed max-w-3xl">Cryptographic Remote Integrity Locks and Binary Obfuscation. Self-terminates if a single byte is tampered with.</p>
+                                    </div>
+                                    <div className="bg-surface border-l-4 border-teal p-8 lg:p-10 shadow-lg ml-0 lg:ml-8 relative z-10">
+                                        <h4 className="font-mono text-xs text-teal tracking-widest mb-3">PHASE 2</h4>
+                                        <h3 className="font-outfit text-2xl font-bold mb-3">In-Exam Active Defense</h3>
+                                        <p className="text-white/60 font-manrope text-sm leading-relaxed max-w-3xl">Absolute Kiosk UI Lockdown, Task Manager Neutralization, and continuous process blacklisting to stop overlays.</p>
+                                    </div>
+                                    <div className="bg-surface border-l-4 border-green p-8 lg:p-10 shadow-lg ml-0 lg:ml-16 relative z-20">
+                                        <h4 className="font-mono text-xs text-green tracking-widest mb-3">PHASE 3</h4>
+                                        <h3 className="font-outfit text-2xl font-bold mb-3">Anti-Cheat & Forensic Telemetry</h3>
+                                        <p className="text-white/60 font-manrope text-sm leading-relaxed max-w-3xl">Multi-Layer Memory Honeypots and Chronological Tamper Defense to detect speed-hacks and code injections.</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </section>
+                                        {/* RECORDS SECTION */}
                     <section id="records" className="py-32 px-6 border-b border-white/10">
                         <div className="max-w-7xl mx-auto">
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp}>
@@ -181,7 +246,7 @@
                                         <h2 className="font-outfit text-5xl font-bold tracking-tight mb-2">The ledger speaks.</h2>
                                         <h2 className="font-outfit text-5xl font-bold tracking-tight text-white/30">Every exam, accounted for.</h2>
                                     </div>
-                                    <p className="text-white/60 font-manrope text-sm self-end pb-2">
+                                    <p className="text-white/60 font-manrope text-sm self-end pb-2 max-w-md">
                                         A live, append-only log of institutions that have entrusted their high-stakes assessments to the CAPSUP ecosystem. Numbers verified end-to-end.
                                     </p>
                                 </div>
@@ -205,58 +270,37 @@
                                     </div>
                                 </div>
 
-                                {/* LEDGER TABLE */}
                                 <div className="overflow-x-auto">
                                     <div className="text-[10px] font-mono text-white/30 mb-4 flex justify-between">
                                         <span>// 5 RECORDS ON FILE</span>
-                                        <span>LOAD MORE +</span>
+                                        <span className="hover:text-amber cursor-pointer transition-colors">LOAD MORE +</span>
                                     </div>
-                                    <table className="w-full text-left text-sm font-manrope border-collapse">
+                                    <table className="w-full text-left text-sm font-manrope border-collapse whitespace-nowrap">
                                         <thead className="text-[10px] font-mono uppercase text-white/40 border-b border-white/10">
                                             <tr>
                                                 <th className="pb-4 font-normal">Institution</th>
-                                                <th className="pb-4 font-normal">Exam</th>
-                                                <th className="pb-4 font-normal text-right">Candidates</th>
-                                                <th className="pb-4 font-normal pl-8">Date</th>
-                                                <th className="pb-4 font-normal">Location</th>
+                                                <th className="pb-4 font-normal px-6">Exam</th>
+                                                <th className="pb-4 font-normal px-6 text-right">Candidates</th>
+                                                <th className="pb-4 font-normal px-6">Date</th>
+                                                <th className="pb-4 font-normal px-6">Location</th>
                                             </tr>
                                         </thead>
                                         <tbody className="text-white/80 text-xs">
-                                            <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                                                <td className="py-5 font-bold text-white">Chandigarh University</td>
-                                                <td className="py-5">B.Sc HHA Mid Term Examination</td>
-                                                <td className="py-5 font-mono text-amber text-right">2,400</td>
-                                                <td className="py-5 font-mono text-white/40 pl-8">2024-03-12</td>
-                                                <td className="py-5 text-white/40">Chandigarh, IN</td>
-                                            </tr>
-                                            <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                                                <td className="py-5 font-bold text-white">Patliputra Institute of Technology</td>
-                                                <td className="py-5">Engineering Entrance Mock</td>
-                                                <td className="py-5 font-mono text-amber text-right">1,120</td>
-                                                <td className="py-5 font-mono text-white/40 pl-8">2024-04-05</td>
-                                                <td className="py-5 text-white/40">Motihari, Bihar</td>
-                                            </tr>
-                                            <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                                                <td className="py-5 font-bold text-white">DAV Public School Network</td>
-                                                <td className="py-5">Scholarship Assessment</td>
-                                                <td className="py-5 font-mono text-amber text-right">4,800</td>
-                                                <td className="py-5 font-mono text-white/40 pl-8">2024-05-22</td>
-                                                <td className="py-5 text-white/40">Multi-Center (12 cities)</td>
-                                            </tr>
-                                            <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                                                <td className="py-5 font-bold text-white">Bihar State Open University</td>
-                                                <td className="py-5">Semester Finals</td>
-                                                <td className="py-5 font-mono text-amber text-right">894</td>
-                                                <td className="py-5 font-mono text-white/40 pl-8">2024-06-15</td>
-                                                <td className="py-5 text-white/40">Patna, Bihar</td>
-                                            </tr>
-                                            <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                                                <td className="py-5 font-bold text-white">Acme Corporate Certification Body</td>
-                                                <td className="py-5">Professional Certification</td>
-                                                <td className="py-5 font-mono text-amber text-right">320</td>
-                                                <td className="py-5 font-mono text-white/40 pl-8">2024-10-20</td>
-                                                <td className="py-5 text-white/40">Remote (Pan-India)</td>
-                                            </tr>
+                                            {[
+                                                { inst: "Chandigarh University", exam: "B.Sc HHA Mid Term Examination", cand: "2,400", date: "2024-03-12", loc: "Chandigarh, IN" },
+                                                { inst: "Patliputra Institute of Technology", exam: "Engineering Entrance Mock", cand: "1,120", date: "2024-04-05", loc: "Motihari, Bihar" },
+                                                { inst: "DAV Public School Network", exam: "Scholarship Assessment", cand: "4,800", date: "2024-05-22", loc: "Multi-Center (12 cities)" },
+                                                { inst: "Bihar State Open University", exam: "Semester Finals", cand: "894", date: "2024-06-15", loc: "Patna, Bihar" },
+                                                { inst: "Acme Corporate Certification Body", exam: "Professional Certification", cand: "320", date: "2024-10-20", loc: "Remote (Pan-India)" }
+                                            ].map((row, i) => (
+                                                <tr key={i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                                    <td className="py-5 font-bold text-white">{row.inst}</td>
+                                                    <td className="py-5 px-6">{row.exam}</td>
+                                                    <td className="py-5 px-6 font-mono text-amber text-right">{row.cand}</td>
+                                                    <td className="py-5 px-6 font-mono text-white/40">{row.date}</td>
+                                                    <td className="py-5 px-6 text-white/40">{row.loc}</td>
+                                                </tr>
+                                            ))}
                                         </tbody>
                                     </table>
                                 </div>
@@ -264,7 +308,7 @@
                         </div>
                     </section>
 
-                    {/* OWNER PROFILE */}
+                    {/* OWNER PROFILE SECTION */}
                     <section id="owner" className="py-32 px-6 border-b border-white/10 bg-[#080808]">
                         <div className="max-w-4xl mx-auto">
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp}>
@@ -272,6 +316,119 @@
                                 <h2 className="font-outfit text-4xl lg:text-5xl font-bold tracking-tight mb-2">Architected by one.</h2>
                                 <h2 className="font-outfit text-4xl lg:text-5xl font-bold tracking-tight text-white/30 mb-16">Trusted by many.</h2>
 
-                                <div className="grid md:grid-cols-2 bg-surface border border-white/10">
-                                    {/* Left Image/Logo Box */}
-                                    <div className="p-16 border-b md:border-b-0 md:border-r border-white/10 flex items-center justify-center 
+                                <div className="grid md:grid-cols-2 bg-surface border border-white/10 shadow-2xl">
+                                    <div className="p-16 border-b md:border-b-0 md:border-r border-white/10 flex items-center justify-center relative bg-background/50">
+                                        <div className="absolute top-4 left-4 text-[10px] font-mono text-white/30">ID. 8492</div>
+                                        <div className="absolute top-4 right-4 text-[10px] font-mono text-amber tracking-widest">CLEARED</div>
+                                        <div className="absolute bottom-4 left-4 text-[10px] font-mono text-white/30">HQ. CHANDIGARH</div>
+                                        
+                                        <div className="text-7xl lg:text-9xl font-outfit font-black tracking-tighter">
+                                            <span className="text-white">L</span><span className="text-amber">P</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="p-8 lg:p-12 flex flex-col justify-center">
+                                        <div className="text-[10px] font-mono text-amber tracking-widest mb-2">FOUNDER & SECURITY ARCHITECT</div>
+                                        <h3 className="font-outfit text-3xl font-bold mb-4">Luccky Pandey</h3>
+                                        <p className="text-sm text-white/60 font-manrope leading-relaxed mb-10">
+                                            19-year-old sole developer behind the Secure Examination Ecosystem. Builds proprietary cryptographic tooling and hardware-bound secure infrastructure trusted by institutions across India. Designs systems under strict zero-trust principles.
+                                        </p>
+                                        
+                                        <div className="grid grid-cols-2 gap-6 mb-10">
+                                            <div>
+                                                <div className="text-[10px] font-mono text-white/40 mb-1">AGE</div>
+                                                <div className="text-sm font-bold tracking-wide">19 Years</div>
+                                            </div>
+                                            <div>
+                                                <div className="text-[10px] font-mono text-white/40 mb-1">EDUCATION</div>
+                                                <div className="text-sm font-bold tracking-wide">B.Sc HHA, Chandigarh</div>
+                                            </div>
+                                            <div>
+                                                <div className="text-[10px] font-mono text-white/40 mb-1">RESIDENCE</div>
+                                                <div className="text-sm font-bold tracking-wide">Motihari, Bihar</div>
+                                            </div>
+                                            <div>
+                                                <div className="text-[10px] font-mono text-white/40 mb-1">CURRENT LOCATION</div>
+                                                <div className="text-sm font-bold tracking-wide">Chandigarh</div>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex flex-wrap gap-3">
+                                            <a href="https://twitter.com/lucckypandey" className="border border-white/20 px-4 py-2 text-[10px] font-mono flex items-center gap-2 hover:bg-white hover:text-black transition-colors"><i data-lucide="twitter" className="w-3 h-3"></i> @lucckypandey</a>
+                                            <a href="https://wa.me/917369387462" className="border border-white/20 px-4 py-2 text-[10px] font-mono flex items-center gap-2 hover:bg-white hover:text-black transition-colors"><i data-lucide="message-square" className="w-3 h-3"></i> WhatsApp</a>
+                                            <a href="mailto:beastonnmicc@gmail.com" className="border border-white/20 px-4 py-2 text-[10px] font-mono flex items-center gap-2 hover:bg-white hover:text-black transition-colors"><i data-lucide="mail" className="w-3 h-3"></i> Email</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </section>
+
+                    {/* CONTACT / FOOTER SECTION */}
+                    <section id="contact" className="pt-32 pb-12 px-6">
+                        <div className="max-w-5xl mx-auto">
+                            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp}>
+                                <div className="text-[10px] font-mono text-white/50 tracking-widest mb-4">// SECTION.06 / SECURE YOUR NEXT EXAM</div>
+                                <h2 className="font-outfit text-4xl lg:text-6xl font-bold tracking-tight mb-2">Ready to host an</h2>
+                                <h2 className="font-outfit text-4xl lg:text-6xl font-bold tracking-tight text-amber mb-6">uncompromised exam?</h2>
+                                <p className="text-white/60 font-manrope text-sm mb-16 max-w-xl">
+                                    Reach out directly. No forms, no funnels. The founder responds to every inquiry within 24 hours.
+                                </p>
+
+                                <div className="grid md:grid-cols-3 gap-4 mb-24">
+                                    <a href="https://wa.me/917369387462" className="bg-surface border border-white/10 p-6 flex flex-col justify-between h-32 hover:border-green transition-colors group">
+                                        <div className="flex justify-between items-start">
+                                            <i data-lucide="message-circle" className="w-5 h-5 text-green"></i>
+                                            <i data-lucide="arrow-up-right" className="w-4 h-4 text-white/20 group-hover:text-green transition-colors"></i>
+                                        </div>
+                                        <div>
+                                            <div className="text-[10px] font-mono text-white/40 mb-1">WHATSAPP / DIRECT PHONE</div>
+                                            <div className="text-sm font-bold tracking-wide">+91 73693 87462</div>
+                                        </div>
+                                    </a>
+                                    <a href="https://twitter.com/lucckypandey" className="bg-surface border border-white/10 p-6 flex flex-col justify-between h-32 hover:border-amber transition-colors group">
+                                        <div className="flex justify-between items-start">
+                                            <i data-lucide="twitter" className="w-5 h-5 text-amber"></i>
+                                            <i data-lucide="arrow-up-right" className="w-4 h-4 text-white/20 group-hover:text-amber transition-colors"></i>
+                                        </div>
+                                        <div>
+                                            <div className="text-[10px] font-mono text-white/40 mb-1">X (TWITTER)</div>
+                                            <div className="text-sm font-bold tracking-wide">@lucckypandey</div>
+                                        </div>
+                                    </a>
+                                    <a href="mailto:beastonnmicc@gmail.com" className="bg-surface border border-white/10 p-6 flex flex-col justify-between h-32 hover:border-teal transition-colors group">
+                                        <div className="flex justify-between items-start">
+                                            <i data-lucide="mail" className="w-5 h-5 text-teal"></i>
+                                            <i data-lucide="arrow-up-right" className="w-4 h-4 text-white/20 group-hover:text-teal transition-colors"></i>
+                                        </div>
+                                        <div>
+                                            <div className="text-[10px] font-mono text-white/40 mb-1">EMAIL / DIRECT</div>
+                                            <div className="text-sm font-bold tracking-wide text-white truncate">beastonnmicc@gmail.com</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div className="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-8 text-[10px] font-mono text-white/30">
+                                    <div className="flex items-center gap-4 mb-4 md:mb-0">
+                                        <span className="text-amber">SEE // CAPSUP</span>
+                                        <span>SECURE EXAMINATION ECOSYSTEM © 2026 LUCCKY PANDEY</span>
+                                    </div>
+                                    <div className="flex gap-6">
+                                        <a href="#privacy" className="hover:text-white transition-colors">PRIVACY</a>
+                                        <a href="#terms" className="hover:text-white transition-colors">TERMS</a>
+                                        <a href="#login" className="hover:text-amber transition-colors">ADMIN LOGIN</a>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </section>
+
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
