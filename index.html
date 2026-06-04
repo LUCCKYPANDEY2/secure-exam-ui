@@ -92,7 +92,6 @@
                             <div className="hidden lg:flex gap-8 text-xs font-mono tracking-widest text-white/70">
                                 <a href="#ecosystem" className="hover:text-amber transition-colors">ECOSYSTEM</a>
                                 <a href="#architecture" className="hover:text-amber transition-colors">ARCHITECTURE</a>
-                                <a href="#records" className="hover:text-amber transition-colors">RECORDS</a>
                                 <a href="#owner" className="hover:text-amber transition-colors">OWNER</a>
                                 <a href="#contact" className="hover:text-amber transition-colors">CONTACT</a>
                             </div>
@@ -116,12 +115,12 @@
                                     Enterprise-grade <strong>Secure Examination Ecosystem</strong> engineered for high-stakes offline assessments. Four hermetically sealed applications. Three phases of active defense. Zero tolerance for compromise.
                                 </p>
                                 <div className="flex flex-wrap gap-4 mb-16">
-                                    <button className="bg-amber text-black font-mono text-sm px-8 py-4 font-bold flex items-center gap-2 hover:bg-white transition-colors">
+                                    <a href="#architecture" className="bg-amber text-black font-mono text-sm px-8 py-4 font-bold inline-flex items-center gap-2 hover:bg-white transition-colors">
                                         View Architecture <i data-lucide="arrow-right" className="w-4 h-4"></i>
-                                    </button>
-                                    <button className="border border-white/20 text-white font-mono text-sm px-8 py-4 flex items-center gap-2 hover:border-white transition-colors">
+                                    </a>
+                                    <a href="#owner" className="border border-white/20 text-white font-mono text-sm px-8 py-4 inline-flex items-center gap-2 hover:border-white transition-colors">
                                         <i data-lucide="user" className="w-4 h-4"></i> Contact Founder
-                                    </button>
+                                    </a>
                                 </div>
 
                                 {/* Hero Stats */}
@@ -141,7 +140,7 @@
                                 </div>
                             </motion.div>
 
-                            {/* Hero Right Visual */}
+                            {/* Hero Right Visual with Custom Logo */}
                             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative hidden lg:block">
                                 <div className="bg-surface border border-white/10 p-8 shadow-2xl relative">
                                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber to-transparent"></div>
@@ -150,11 +149,8 @@
                                         <div className="w-2 h-2 rounded-full bg-green animate-pulse"></div>
                                     </div>
                                     
-                                    <div className="bg-white p-6 mb-8 flex justify-center items-center h-40">
-                                        <div className="text-center">
-                                            <i data-lucide="graduation-cap" className="w-16 h-16 text-[#0A2540] mx-auto mb-2"></i>
-                                            <h2 className="font-outfit font-bold text-3xl text-[#0A2540] tracking-tight">CAPSUP</h2>
-                                        </div>
+                                    <div className="bg-white p-6 mb-8 flex justify-center items-center h-40 rounded-sm">
+                                        <img src="./1000139703.png" alt="CAPSUP Logo" className="max-h-full max-w-full object-contain" />
                                     </div>
 
                                     <p className="font-mono text-xs text-white/70 leading-relaxed mb-6">
@@ -208,8 +204,7 @@
                             </motion.div>
                         </div>
                     </section>
-
-                    {/* ARCHITECTURE SECTION */}
+                                        {/* ARCHITECTURE SECTION */}
                     <section id="architecture" className="py-32 px-6 border-b border-white/10 bg-[#080808]">
                         <div className="max-w-7xl mx-auto">
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp}>
@@ -236,83 +231,12 @@
                             </motion.div>
                         </div>
                     </section>
-                                        {/* RECORDS SECTION */}
-                    <section id="records" className="py-32 px-6 border-b border-white/10">
-                        <div className="max-w-7xl mx-auto">
-                            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp}>
-                                <div className="text-[10px] font-mono text-white/50 tracking-widest mb-4">// SECTION.04 / EXAM HOSTING LEDGER</div>
-                                <div className="grid lg:grid-cols-2 gap-12 mb-16">
-                                    <div>
-                                        <h2 className="font-outfit text-5xl font-bold tracking-tight mb-2">The ledger speaks.</h2>
-                                        <h2 className="font-outfit text-5xl font-bold tracking-tight text-white/30">Every exam, accounted for.</h2>
-                                    </div>
-                                    <p className="text-white/60 font-manrope text-sm self-end pb-2 max-w-md">
-                                        A live, append-only log of institutions that have entrusted their high-stakes assessments to the CAPSUP ecosystem. Numbers verified end-to-end.
-                                    </p>
-                                </div>
-
-                                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 border-y border-white/10 py-12">
-                                    <div>
-                                        <div className="text-4xl lg:text-5xl font-mono text-amber mb-3">4</div>
-                                        <div className="text-[10px] font-mono text-white/50 uppercase tracking-widest">Exams Hosted</div>
-                                    </div>
-                                    <div>
-                                        <div className="text-4xl lg:text-5xl font-mono text-amber mb-3">9,534</div>
-                                        <div className="text-[10px] font-mono text-white/50 uppercase tracking-widest">Candidates Secured</div>
-                                    </div>
-                                    <div>
-                                        <div className="text-4xl lg:text-5xl font-mono text-amber mb-3">4</div>
-                                        <div className="text-[10px] font-mono text-white/50 uppercase tracking-widest">Institutions</div>
-                                    </div>
-                                    <div>
-                                        <div className="text-4xl lg:text-5xl font-mono text-amber mb-3">99.99<span className="text-2xl">%</span></div>
-                                        <div className="text-[10px] font-mono text-white/50 uppercase tracking-widest">Integrity Score</div>
-                                    </div>
-                                </div>
-
-                                <div className="overflow-x-auto">
-                                    <div className="text-[10px] font-mono text-white/30 mb-4 flex justify-between">
-                                        <span>// 5 RECORDS ON FILE</span>
-                                        <span className="hover:text-amber cursor-pointer transition-colors">LOAD MORE +</span>
-                                    </div>
-                                    <table className="w-full text-left text-sm font-manrope border-collapse whitespace-nowrap">
-                                        <thead className="text-[10px] font-mono uppercase text-white/40 border-b border-white/10">
-                                            <tr>
-                                                <th className="pb-4 font-normal">Institution</th>
-                                                <th className="pb-4 font-normal px-6">Exam</th>
-                                                <th className="pb-4 font-normal px-6 text-right">Candidates</th>
-                                                <th className="pb-4 font-normal px-6">Date</th>
-                                                <th className="pb-4 font-normal px-6">Location</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody className="text-white/80 text-xs">
-                                            {[
-                                                { inst: "Chandigarh University", exam: "B.Sc HHA Mid Term Examination", cand: "2,400", date: "2024-03-12", loc: "Chandigarh, IN" },
-                                                { inst: "Patliputra Institute of Technology", exam: "Engineering Entrance Mock", cand: "1,120", date: "2024-04-05", loc: "Motihari, Bihar" },
-                                                { inst: "DAV Public School Network", exam: "Scholarship Assessment", cand: "4,800", date: "2024-05-22", loc: "Multi-Center (12 cities)" },
-                                                { inst: "Bihar State Open University", exam: "Semester Finals", cand: "894", date: "2024-06-15", loc: "Patna, Bihar" },
-                                                { inst: "Acme Corporate Certification Body", exam: "Professional Certification", cand: "320", date: "2024-10-20", loc: "Remote (Pan-India)" }
-                                            ].map((row, i) => (
-                                                <tr key={i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                                                    <td className="py-5 font-bold text-white">{row.inst}</td>
-                                                    <td className="py-5 px-6">{row.exam}</td>
-                                                    <td className="py-5 px-6 font-mono text-amber text-right">{row.cand}</td>
-                                                    <td className="py-5 px-6 font-mono text-white/40">{row.date}</td>
-                                                    <td className="py-5 px-6 text-white/40">{row.loc}</td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </section>
 
                     {/* OWNER PROFILE SECTION */}
                     <section id="owner" className="py-32 px-6 border-b border-white/10 bg-[#080808]">
                         <div className="max-w-4xl mx-auto">
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp}>
-                                <div className="text-[10px] font-mono text-white/50 tracking-widest mb-4">// SECTION.05 / FOUNDER PROFILE</div>
+                                <div className="text-[10px] font-mono text-white/50 tracking-widest mb-4">// SECTION.04 / FOUNDER PROFILE</div>
                                 <h2 className="font-outfit text-4xl lg:text-5xl font-bold tracking-tight mb-2">Architected by one.</h2>
                                 <h2 className="font-outfit text-4xl lg:text-5xl font-bold tracking-tight text-white/30 mb-16">Trusted by many.</h2>
 
@@ -368,7 +292,7 @@
                     <section id="contact" className="pt-32 pb-12 px-6">
                         <div className="max-w-5xl mx-auto">
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp}>
-                                <div className="text-[10px] font-mono text-white/50 tracking-widest mb-4">// SECTION.06 / SECURE YOUR NEXT EXAM</div>
+                                <div className="text-[10px] font-mono text-white/50 tracking-widest mb-4">// SECTION.05 / SECURE YOUR NEXT EXAM</div>
                                 <h2 className="font-outfit text-4xl lg:text-6xl font-bold tracking-tight mb-2">Ready to host an</h2>
                                 <h2 className="font-outfit text-4xl lg:text-6xl font-bold tracking-tight text-amber mb-6">uncompromised exam?</h2>
                                 <p className="text-white/60 font-manrope text-sm mb-16 max-w-xl">
@@ -412,11 +336,6 @@
                                     <div className="flex items-center gap-4 mb-4 md:mb-0">
                                         <span className="text-amber">SEE // CAPSUP</span>
                                         <span>SECURE EXAMINATION ECOSYSTEM © 2026 LUCCKY PANDEY</span>
-                                    </div>
-                                    <div className="flex gap-6">
-                                        <a href="#privacy" className="hover:text-white transition-colors">PRIVACY</a>
-                                        <a href="#terms" className="hover:text-white transition-colors">TERMS</a>
-                                        <a href="#login" className="hover:text-amber transition-colors">ADMIN LOGIN</a>
                                     </div>
                                 </div>
                             </motion.div>
